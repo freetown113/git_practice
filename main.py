@@ -16,6 +16,19 @@ class Combinator:
             result[i] = ''.join(item)
         return result
 
+    def set_own_combination(self, sequence):
+        if isinstance(sequence, list):
+            permited = True
+            for s in sequence:
+                permited = True if isinstance(s, str) else False
+            if not permited:
+                raise ValueError
+            self.seq = sequence
+        elif isinstance(sequence, str):
+            self.seq = self.__handle_seq(sequence)
+        else:
+            raise ValueError(f'Uknown type passed {type(sequence)}')
+
 
 if __name__ == '__main__':
     com = Combinator()
