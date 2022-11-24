@@ -32,6 +32,12 @@ class Combinator:
     def __len__(self):
         return len(self.seq)
 
+    def __shuffle_sequence(self):
+        temp_seq = list([None]) * self.__len__()
+        for s in random.randrange(0, self.__len__()):
+            temp_seq.append(self.seq[s])
+        self.seq = temp_seq
+
 
 if __name__ == '__main__':
     com = Combinator()
