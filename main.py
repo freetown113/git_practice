@@ -29,6 +29,9 @@ class Combinator:
         else:
             raise ValueError(f'Uknown type passed {type(sequence)}')
 
+    def __len__(self):
+        return len(self.seq)
+
 
 if __name__ == '__main__':
     com = Combinator()
