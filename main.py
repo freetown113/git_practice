@@ -9,17 +9,11 @@ class Combinator:
     def __handle_seq(self, seq):
         return list(seq)
 
-    def __squash(self, list):
-        temp = ''
-        for i in list:
-            temp += i
-        return temp
-
     def get_combinations(self, number=1, max_length=1, min_length=2):
         result = list([None])*number
         for i in range(number):
             item = random.sample(self.seq, random.randint(min_length, max_length))
-            result[i] = self.__squash(item)
+            result[i] = ''.join(item)
         return result
 
 
